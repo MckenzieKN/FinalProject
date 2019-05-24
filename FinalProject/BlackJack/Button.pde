@@ -45,23 +45,13 @@ public class Button {
     fullDown = true;
    }
    if(fullDown){
-    rules(); 
+    end();
    }
   }
   
   //method pulls up the grey box and makes the end button to restart the game
-  public void rules (){
-    smooth();
-    fill(220);
-    stroke(0);
-    rect(140,60,275,300,10);
-    smooth();
-    fill(255);
-    rect(x,y,w,h,10);
+  public void end (){
     colors("End");
-    text("Rules", 140+(275/2)-(textWidth("Rules")/2), 70+(50/2)); 
-    
-    
 }
 
 
@@ -116,6 +106,7 @@ public class Button {
       fill(255);
     }else{    
       fill(0);
+      
     }
     textSize(24); 
     text(l, x+w/2-(textWidth(l)/2), y+h/2+(textAscent()/2)); 
