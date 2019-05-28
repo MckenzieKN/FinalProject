@@ -4,21 +4,12 @@ public class Card {
  
   //makes the deck of 52 cards
   public Card (){
-    Scanner y = new Scanner(System.in);
     int count = 0;
-    int ace;
     int x = 1;
     while(count <= 52){
       if(x>13){
        x = 1; 
-      } else if(x ==1){
-        System.out.println("The ace can be either a 1 or an 11. What is it's value? Input below");
-        ace =y.nextInt();
-        while(ace != 11 || ace!= 1){
-         System.out.println("The ace has to be a 1 or an 11. Pick one.");
-         ace = y.nextInt();
-        }
-      }
+      } 
       if(x>10){
        cards.add(10); 
       }else {
@@ -38,6 +29,21 @@ public class Card {
    cards = shuf;
   }
   
+  public int getAce(){
+    System.out.println("");
+    Scanner scan = new Scanner(System.in);
+    System.out.println("The ace can either be a 1 or an 11. Pick one and type it below");
+    return scan.nextInt(); 
+  }
+  
+  public int rand (){
+    int x = (int)(Math.random()* cards.size());
+    return 0;
+  }
+  
+  public void getCards(){
+    Card first;
+  }
   
  
  

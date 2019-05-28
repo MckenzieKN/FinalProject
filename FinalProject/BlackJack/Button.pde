@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Button {
  private int x,y, h, w;
  private String label;
@@ -38,14 +39,18 @@ public class Button {
   }
   
  // method makes the start button and when it's clicked
- // it pulls up the grey box for the rules
+ // Welcomes the new player
   public void check (){
+    
     colors("Start");
    if(down){
     fullDown = true;
+    
    }
    if(fullDown){
     end();
+    
+    
    }
   }
   
