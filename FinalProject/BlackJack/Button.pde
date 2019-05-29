@@ -36,6 +36,7 @@ public class Button {
   stroke(0);
   rect(x,y, w,h, 10);
   check();
+  
   }
   
  // method makes the start button and when it's clicked
@@ -49,15 +50,22 @@ public class Button {
    }
    if(fullDown){
     end();
-    
-    
    }
   }
   
   //method pulls up the grey box and makes the end button to restart the game
   public void end (){
     colors("End");
+    
 }
+  public void cardBoxes(int xp,int yp,int hp,int wp){
+    smooth();
+    fill(255);
+    stroke(0);
+    rect(xp,yp,hp,wp,10);
+    
+    
+  }
 
 
 
@@ -116,6 +124,42 @@ public class Button {
     textSize(24); 
     text(l, x+w/2-(textWidth(l)/2), y+h/2+(textAscent()/2)); 
 }
+  
+  public void hit (){
+   smooth();
+   fill(120);
+   stroke(0);
+   rect(100,160,90,60,10);
+   textSize(30);
+   fill(0);
+   text("Hit", 123,200);
+  }
+  
+  public void stand(){
+   smooth();
+   fill(120);
+   stroke(0);
+   rect(375,160,90,60,10);
+   textSize(28);
+   fill(0);
+   text("Stand", 380,200);
+  }
+  
+  public boolean hitClick(){
+   boolean d = false;
+   if(mousePressed){
+    d= true;    
+   }
+   return d;
+  }
+  
+  public boolean mouseOverHit(){
+   if(mouseX > 100 && mouseY > 160 && mouseX < (100+60) && mouseY < (160+90)){
+    return true;
+  } 
+  return false;
+  }
+  
   
 
 }

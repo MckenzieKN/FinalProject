@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 public class Card {
  private ArrayList<Integer> cards = new ArrayList<Integer>();
  
@@ -10,12 +10,15 @@ public class Card {
       if(x>13){
        x = 1; 
       } 
-      if(x>10){
+      if(x ==1){
+        cards.add(11);
+      }else if(x>10){
        cards.add(10); 
       }else {
         cards.add(x);
       }
       x++;
+      count++;
     }
   }
   
@@ -31,18 +34,19 @@ public class Card {
   
   public int getAce(){
     System.out.println("");
-    Scanner scan = new Scanner(System.in);
     System.out.println("The ace can either be a 1 or an 11. Pick one and type it below");
-    return scan.nextInt(); 
-  }
+  return 0;
+}
   
-  public int rand (){
+  public int randCard (){
     int x = (int)(Math.random()* cards.size());
-    return 0;
+    return cards.get(x);
   }
   
   public void getCards(){
-    Card first;
+    int x = randCard();
+    int y = randCard();
+    text("Your card values are "+ x+" and "+ y, 100,100);
   }
   
  
