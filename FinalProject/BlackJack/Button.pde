@@ -6,6 +6,10 @@ public class Button {
  private boolean down = false;
  private boolean fullDown = false;
  
+ public Button (){
+   
+ }
+ 
   public Button (int x, int y, int h, int w, String l){
     this.x = x;
     this.y = y;
@@ -145,12 +149,9 @@ public class Button {
    text("Stand", 380,200);
   }
   
-  public boolean hitClick(){
-   boolean d = false;
-   if(mousePressed){
-    d= true;    
-   }
-   return d;
+  public void hitClick(){
+   Card c = new Card();
+   c.addOne();
   }
   
   public boolean mouseOverHit(){

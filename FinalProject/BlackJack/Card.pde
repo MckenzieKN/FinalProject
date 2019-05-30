@@ -1,7 +1,7 @@
 
 public class Card {
  private ArrayList<Integer> cards = new ArrayList<Integer>();
- 
+ private ArrayList<Integer> playerCards = new ArrayList<Integer>();
   //makes the deck of 52 cards
   public Card (){
     int count = 0;
@@ -43,10 +43,29 @@ public class Card {
     return cards.get(x);
   }
   
-  public void getCards(){
-    int x = randCard();
-    int y = randCard();
-    text("Your card values are "+ x+" and "+ y, 100,100);
+  public int getCards(){
+    return randCard();
+  }
+  
+  public ArrayList<Integer> playersHand(){
+   if(playerCards.size() < 2){
+    playerCards.add(getCards());
+    playerCards.add(getCards());
+    System.out.println(playerCards); 
+    System.out.println("The player's cards are: "+ playerCards);
+   } else {
+    addOne();
+    System.out.println("The player's new cards are "+ playerCards);
+   }
+    return playerCards;
+  }
+  
+  public void addOne(){
+     Button b = new Button();
+   if(b.mouseOverHit()&&mousePressed){
+     playerCards.add(getCards());
+   }
+   System.out.println("All player's cards: "+playerCards);
   }
   
  
