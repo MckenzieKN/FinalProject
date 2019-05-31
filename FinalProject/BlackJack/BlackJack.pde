@@ -3,8 +3,9 @@ Button b;
 Rules r;
 Card c;
 Dealer d;
-
+int n = 0;
 void setup () {
+
  size(600,400); 
  t = new Table ();
  b = new Button (10 ,10, 40,100, "Start");
@@ -22,16 +23,36 @@ void setup () {
 void draw(){
   t.tab();
   b.update();
-  b.cardBoxes(175,240,100,150);
-  b.cardBoxes(300,240,100,150);
+  b.cardBox();
   b.hit();
   b.stand();
-  int count = 0;
+  c.totalPlayer();
   if(mouseX > 100 && mouseY > 160 && mouseX < (100+50) && mouseY < (160+90) &&mousePressed){
-    count++;
+    if(n == 0){
     for(int i = 0; i<1; i++){
-     c.addOne(); 
+      if(n == 0 ){
+        c.addOne(); 
+       
+      }  
+    }
     }
   }
+  n=0;
+  c.showPlayer();
+  c.totalPlayer();
+  int num = 1;
+  if(c.isOver()){
+    textSize(40);
+    if(num % 2 == 1){
+    
+    fill(255);
+    text("You lost the round", 100,100); 
+    num++;
+    } else {
+     fill(255);
+     text("You lost the round", 100,100); 
+     num++;
+  } 
   
+  }
 }

@@ -2,6 +2,8 @@
 public class Card {
  private ArrayList<Integer> cards = new ArrayList<Integer>();
  private ArrayList<Integer> playerCards = new ArrayList<Integer>();
+ private int cc = 0;
+ private int ccc = 0;
   //makes the deck of 52 cards
   public Card (){
     int count = 0;
@@ -20,16 +22,6 @@ public class Card {
       x++;
       count++;
     }
-  }
-  
-  public void shuffle(){
-   ArrayList<Integer> shuf = new ArrayList<Integer>();
-   for(int i = 0; i < cards.size(); i++){
-     int x = (int)(Math.random()*52);
-     shuf.add(cards.remove(x));
-     i--;
-   }
-   cards = shuf;
   }
   
   public int getAce(){
@@ -61,14 +53,42 @@ public class Card {
   }
   
   public void addOne(){
-     Button b = new Button();
-   if(b.mouseOverHit()&&mousePressed){
+   cc++;
+   if(cc < 2){
      playerCards.add(getCards());
-   }
-   System.out.println("All player's cards: "+playerCards);
+  }
+  showPlayer();
+  }
+
+  
+  public ArrayList<Integer> showPlayer (){
+   fill(0);
+   textSize(25);
+   text("Your Cards: ", 214,250);
+   text(" "+ playerCards, 227,290);
+   return playerCards; 
+  }
+  
+  public int totalPlayer (){
+    int sum = 0;
+    for(int i = 0; i < playerCards.size(); i++){
+      sum += playerCards.get(i);
+    }
+    textSize(20);
+    fill(0);
+    text("Total: "+ sum, 240, 350);
+   return sum; 
+  }
+  
+  public boolean isOver (){
+    if(totalPlayer() >21){
+      return true;
+    }
+   return false; 
   }
   
  
+
  
   
 }

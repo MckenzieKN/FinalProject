@@ -62,14 +62,13 @@ public class Button {
     colors("End");
     
 }
-  public void cardBoxes(int xp,int yp,int hp,int wp){
-    smooth();
+
+  public void cardBox(){
     fill(255);
     stroke(0);
-    rect(xp,yp,hp,wp,10);
-    
-    
-  }
+    smooth();
+   rect(210,200,150,175,10);
+ }
 
 
 
