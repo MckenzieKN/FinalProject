@@ -28,5 +28,17 @@ public class Rules {
     
   }
   
-
+  
+  public void winner (){
+    Player p = new Player();
+    Card c = new Card();
+    Dealer d = new Dealer();
+   if(c.totalPlayer() < d.totalDealer()){
+     System.out.println("The dealer wins! You lose!");
+   } else {
+     System.out.println("You win!");
+     p.winBid();
+  }
+  
+  }
 }

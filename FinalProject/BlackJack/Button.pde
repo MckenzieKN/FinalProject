@@ -5,6 +5,7 @@ public class Button {
  private boolean over = false;
  private boolean down = false;
  private boolean fullDown = false;
+ Player p = new Player();
  
  public Button (){
    
@@ -159,7 +160,38 @@ public class Button {
   } 
   return false;
   }
+  int n = 0;
+  public void roundSetUp(){
+    n =0;
+    fill(255);
+    stroke(0);
+    smooth();
+    rect(25,230,150,120,10);
+    fill(0);
+    textSize(18);
+    p.firstBet();
+    text("Bets: 50", 30, 260);
+    text("Money: $"+ p.getMoney(), 28,280);
+  if(c.isOver()){
+    System.out.println("You lost the round");
+    System.out.println();
+    c.nextRound();
+   } 
+  }
   
+  boolean finish = false;
+  public void hitStand(){
+    if(mouseX > 375 && mouseY > 160 && mouseX < (375+90) && mouseY < (160+60) &&mousePressed){
+      finish = true;
+    }
+  }
   
-
+ //displays the round set up method - the white box with the changing money values
+  public void checkStand(){
+    n++;
+   if(finish&&n==1){
+    roundSetUp(); 
+    r.winner();
+   }
+  }
 }

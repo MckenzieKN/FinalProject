@@ -59,6 +59,14 @@ public class Card {
   }
   showPlayer();
   }
+  
+  public void addTwo(){
+    cc++;
+    if(cc<3){
+      playerCards.add(getCards());
+    }
+    showPlayer();
+  }
 
   
   public ArrayList<Integer> showPlayer (){
@@ -87,7 +95,11 @@ public class Card {
    return false; 
   }
   
- 
+ public void nextRound(){
+   ArrayList <Integer> done = new ArrayList <Integer>();
+  playerCards = done;
+  playersHand();
+ }
 
  
   

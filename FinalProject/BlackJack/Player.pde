@@ -11,31 +11,14 @@ public class Player {
   return money; 
  }
  
- public void setBet (){
-   Scanner scan = new Scanner(System.in);
-   System.out.println("Type the amount you want to bet below");
-   bet = scan.nextInt();
-   while(money < bet){
-    System.out.println("You don't have enough money to bid this much. Type a new value below"); 
-    bet = scan.nextInt();
-   }
-   
+ public int firstBet(){
+   money-=50;
+  return money; 
  }
- 
- public void setMoney(int bet){
-   money-= bet;
- }
- 
- public void winRound(){
-   
- }
- 
- public int getBet(){
-   return bet;
- }
- 
- public void winBid(){
-   
+
+ public int winBid(){
+   money+=100;
+   return money;
  }
  
  public void playerHand(){
