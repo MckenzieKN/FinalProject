@@ -169,9 +169,9 @@ public class Button {
     rect(25,230,150,120,10);
     fill(0);
     textSize(18);
-    p.firstBet();
     text("Bets: 50", 30, 260);
     text("Money: $"+ p.getMoney(), 28,280);
+    p.zero();
   if(c.isOver()){
     System.out.println("You lost the round");
     System.out.println();
@@ -189,7 +189,7 @@ public class Button {
  //displays the round set up method - the white box with the changing money values
   public void checkStand(){
     n++;
-   if(finish&&n==1){
+   if(finish&&n<2){
     roundSetUp(); 
     r.winner();
    }

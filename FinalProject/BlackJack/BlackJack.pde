@@ -30,17 +30,16 @@ void draw(){
   b.checkStand();
   c.totalPlayer();
   if(mouseX > 100 && mouseY > 160 && mouseX < (100+50) && mouseY < (160+90) &&mousePressed){
-    if(n == 0)
     for(int i = 0; i<1; i++)
-      if(n == 0 ){
-        c.addOne(); 
-        n++;
-      }else
-       c. addTwo();  
-  }
+        c.addOne();  
+    c.reSetCC();
+}
   n=0;
   c.showPlayer();
+  p.zero();
   c.totalPlayer();
-  
+  b.roundSetUp();
+  b.hitStand();
+  b.checkStand();
     
   }

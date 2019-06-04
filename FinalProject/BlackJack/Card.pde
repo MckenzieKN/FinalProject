@@ -3,7 +3,6 @@ public class Card {
  private ArrayList<Integer> cards = new ArrayList<Integer>();
  private ArrayList<Integer> playerCards = new ArrayList<Integer>();
  private int cc = 0;
- private int ccc = 0;
   //makes the deck of 52 cards
   public Card (){
     int count = 0;
@@ -53,21 +52,17 @@ public class Card {
   }
   
   public void addOne(){
-   cc++;
-   if(cc < 2){
-     playerCards.add(getCards());
-  }
-  showPlayer();
-  }
-  
-  public void addTwo(){
     cc++;
-    if(cc<3){
+    if(cc < 2){
       playerCards.add(getCards());
     }
-    showPlayer();
+   showPlayer();
   }
-
+  
+  public void reSetCC(){
+    cc = 0;
+  }
+  
   
   public ArrayList<Integer> showPlayer (){
    fill(0);
@@ -99,6 +94,10 @@ public class Card {
    ArrayList <Integer> done = new ArrayList <Integer>();
   playerCards = done;
   playersHand();
+  textSize(20);
+  fill(255);
+  text("Total: "+ totalPlayer(), 240, 350);
+  p.firstBet();
  }
 
  

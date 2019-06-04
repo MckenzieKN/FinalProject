@@ -34,9 +34,21 @@ public class Rules {
     Card c = new Card();
     Dealer d = new Dealer();
    if(c.totalPlayer() < d.totalDealer()){
-     System.out.println("The dealer wins! You lose!");
+     textSize(12);
+     fill(255);
+     text("You Win!", 100,100);
+     textSize(12);
+     fill(0);
+     text("You lose!", 100,100);
+     
    } else {
-     System.out.println("You win!");
+     textSize(12);
+     fill(255);
+     text("You lose!", 100,100);
+     fill(0);
+     text("You Win!", 100,100);
+     
+     
      p.winBid();
   }
   
