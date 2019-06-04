@@ -2,7 +2,7 @@
 
 # Project Title and purpose
 
-One Paragraph of project description goes here
+The project I am making is BlackJack.
 
 ### Difficulties or opportunities you encountered along the way.
 
