@@ -4,7 +4,7 @@ public class Player{
   private int cc = 0;
   
   public Player () {
-    
+   
   }
   
   //sets up the player's hand and adds a card every time the button "hit" is clicked
@@ -13,6 +13,7 @@ public class Player{
    if(playerCards.size() < 2){
     playerCards.add(c.getCards());
     playerCards.add(c.getCards());
+    totalPlayer(playerCards);
     System.out.println("The player's cards are: "+ playerCards);
    } else {
     System.out.println("The player's new cards are "+ playerCards);
@@ -22,28 +23,54 @@ public class Player{
   
   public void addOne(){
     cc++;
-    if(cc < 2){
+    fill(255);
+   textSize(20);
+   text("Your cards: ", 225,270);
+   text(" "+ playerCards, 230,300);
+   if(cc < 2){
+   playerCards.add(c.getCards());
+    showPlayer();
+   }
+  }
+  
+  public void addTwo (){
+   cc++;
+   fill(255);
+   textSize(20);
+   text("Your cards: ", 225,270);
+   text(" "+ playerCards, 230,300);
+    if(cc ==2){
       playerCards.add(c.getCards());
     }
-   showPlayer();
+    if(playerCards.size() >2){
+     showPlayer();
+    }
   }
   
   public ArrayList<Integer> showPlayer (){
    fill(0);
-   textSize(23);
-   text("Your Cards: ", 216,265);
-   text(" "+ playerCards, 237,300);
+   textSize(20);
+   text("Your cards: ", 225,270);
+   text(" "+ playerCards, 230,300);
+   totalPlayer(playerCards);
+   return playerCards;
+  }
+  
+  
+  public int totalPlayer (ArrayList<Integer> p){
+    int sum =0;
+    for(int i = 0; i < p.size(); i++){
+      sum += p.get(i);
+    }
+    
+    textSize(20);
+    fill(0);
+    text("Total: "+sum, 240, 350);
+   return sum; 
+  }
+  
+  public ArrayList<Integer> getHand(){
    return playerCards; 
   }
   
-  public int totalPlayer (){
-    int sum = 0;
-    for(int i = 0; i < playerCards.size(); i++){
-      sum += playerCards.get(i);
-    }
-    textSize(20);
-    fill(0);
-    text("Total: "+ sum, 240, 350);
-   return sum; 
-  }
 }

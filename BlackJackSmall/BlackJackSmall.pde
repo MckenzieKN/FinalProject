@@ -23,15 +23,22 @@ void setup(){
   r.show();
   p.playersHand();
   p.showPlayer();
-  p.totalPlayer();
   d.showFirst();
-  
 }
 
 void draw(){
   b.update(10,10,10,10, "");
-  if(mouseX > 215 && mouseY > 240 && mouseX < (215+150) && mouseY < (240+10)&& mousePressed){
-    for(int i =0; i < 1; i++)
+  if(mouseX > 190 && mouseY > 220 && mouseX < (215+150) && mouseY < (240+140)&& mousePressed){
+    for(int i =0; i < 1; i++){
      b.hitClick();
-  } 
+     p.addOne();
+    }
+  }
+  
+  if(r.isOver()){
+    textSize(100);
+    fill(255);
+    text("GAME OVER", 100,100);
+  }
+  
 }

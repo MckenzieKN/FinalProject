@@ -24,6 +24,14 @@ public class Rules {
      s+= ruleOrder[i] +" "; 
     }
     System.out.print(s);
-    
   }
+  
+  public boolean isOver (){
+    Player p = new Player();
+    if(p.totalPlayer(p.getHand()) >21){
+      return true;
+    }
+   return false; 
+  }
+  
 }
